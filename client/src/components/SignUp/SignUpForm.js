@@ -6,6 +6,7 @@ const SignUpForm = () => {
 	const [password, setPassword] = useState('');
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
+	const [role, setRole] = useState('');
 
 	const [disabled, setDisabled] = useState(false);
 
@@ -21,6 +22,7 @@ const SignUpForm = () => {
 			password,
 			firstName,
 			lastName,
+			role,
 		};
 
 		// POST request using fetch inside useEffect React hook
@@ -83,6 +85,35 @@ const SignUpForm = () => {
 							onChange={(e) => setPassword(e.target.value)}
 							required
 						/>
+						<p>You are a:</p>
+						<div>
+							<input
+								type='radio'
+								id='volunteer'
+								name='role'
+								value='volunteer'
+								onChange={(e) => setRole(e.target.value)}
+							/>
+							<label htmlFor='volunteer'>Volunteer</label>
+
+							<input
+								type='radio'
+								id='mentor'
+								name='role'
+								value='mentor'
+								onChange={(e) => setRole(e.target.value)}
+							/>
+							<label htmlFor='mentor'>Mentor</label>
+
+							<input
+								type='radio'
+								id='business'
+								name='role'
+								value='business'
+								onChange={(e) => setRole(e.target.value)}
+							/>
+							<label htmlFor='business'>Business Partner</label>
+						</div>
 						<button type='submit' disabled={disabled}>
 							{disabled ? 'Registering..' : 'Register'}
 						</button>
