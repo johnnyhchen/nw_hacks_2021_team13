@@ -28,6 +28,7 @@
     "react/no-unused-state": "warn",
     "react/no-unused-prop-types": ["warn"],
     "no-unused-vars": ["warn"],
+    "jsx-a11y/label-has-associated-control": "off",
     "indent": [
       "warn",
       "tab",
